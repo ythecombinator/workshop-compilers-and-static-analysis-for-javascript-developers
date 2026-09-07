@@ -7,7 +7,7 @@
  *
  * Usage:
  *   yarn demo:ast-grep-napi:derived-state
- *   npx tsx src/codemods/astgrep-napi-derived-state-effect.ts <file>
+ *   npx tsx src/demos/astgrep-napi-derived-state-effect.ts <file>
  */
 
 import { readFileSync, writeFileSync } from 'node:fs';

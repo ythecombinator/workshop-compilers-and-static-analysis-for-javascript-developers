@@ -6,7 +6,7 @@
  * and replaces them with a direct reference to that function.
  *
  * Usage:
- *   npx jscodeshift -t src/codemods/jscodeshift-extract-inline-handlers.ts --extensions=tsx <file>
+ *   npx jscodeshift -t src/demos/jscodeshift-extract-inline-handlers.ts --extensions=tsx <file>
  *
  * Before:
  *   <Comp onSelect={(id) => toggleProduct(id)} />

@@ -7,7 +7,7 @@
  * variable.
  *
  * Usage:
- *   npx jscodeshift -t src/codemods/jscodeshift-extract-inline-styles.ts --extensions=tsx <file>
+ *   npx jscodeshift -t src/demos/jscodeshift-extract-inline-styles.ts --extensions=tsx <file>
  *
  * Before:
  *   <Comp style={{ opacity: highlight ? 1 : 0.85 }} />

@@ -17,10 +17,7 @@ import { banner, c, fail, kv, ok, panel, step, truncate } from '@utils/cli';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const workshopRoot = join(__dirname, '..');
-const fixture = join(
-  workshopRoot,
-  'src/demos-fixtures/mitosis/Counter.lite.tsx'
-);
+const fixture = join(workshopRoot, 'src/demos-fixtures/Mitosis.lite.tsx');
 
 async function main() {
   banner('Mitosis · multi-target emit', 'one source → IR → React + Vue');
@@ -30,7 +27,7 @@ async function main() {
 
   step('1/3', 'read .lite.tsx source');
   const source = await readFile(fixture, 'utf8');
-  panel('SOURCE · Counter.lite.tsx', source, c.cyan);
+  panel('SOURCE · Mitosis.lite.tsx', source, c.cyan);
 
   step('2/3', 'parseJsx → MitosisComponent IR');
   const component = parseJsx(source);

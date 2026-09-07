@@ -9,12 +9,12 @@ import { readFile } from 'node:fs/promises';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'cheerio';
-import { findJquery } from '../src/codemods/babel-find-jquery.ts';
+import { findJquery } from '../src/demos/babel-find-jquery.ts';
 import { banner, c, fail, kv, ok, panel, step } from '@utils/cli';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const workshopRoot = join(__dirname, '..');
-const fixture = join(workshopRoot, 'src/demos-fixtures/jquery/page.html');
+const fixture = join(workshopRoot, 'src/demos-fixtures/jquery.html');
 
 async function main() {
   banner(

@@ -6,7 +6,7 @@
  *
  * Usage:
  *   yarn demo:ast-grep-napi
- *   npx tsx src/codemods/astgrep-napi-lazy-state-initializer.ts <file>
+ *   npx tsx src/demos/astgrep-napi-lazy-state-initializer.ts <file>
  *
  * Before:  useState(new Set(...))
  * After:   useState(() => new Set(...))

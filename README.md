@@ -86,7 +86,7 @@ code when a UI surface isn't the right fit.
 | `/ast-grep-jssg`      | `yarn demo:ast-grep:jssg` / `:derived-state`            | Same smells via Codemod JSSG           |
 | `/ts-morph`           | `yarn demo:ts-morph`                                    | Prop types → interfaces                |
 
-Transforms live flat under `src/codemods/`. The three ast-grep tools share two
+Transforms live flat under `src/demos/`. The three ast-grep tools share two
 targets — `lazy-state-initializer.tsx` and `derived-state-effect.tsx`. Restore
 from git between runs after a mutating codemod.
 
@@ -116,9 +116,9 @@ yarn demo:radius-tracker:serve    # open the static dashboard
 yarn demo:react-doctor            # scan src/components for React health smells
 ```
 
-**Babel · find jQuery** reads `src/demos-fixtures/jquery/page.html`, pulls inline
+**Babel · find jQuery** reads `src/demos-fixtures/jquery.html`, pulls inline
 `<script>` bodies with cheerio, then walks each script with `@babel/parser` +
-`traverse` (`src/codemods/babel-find-jquery.ts`) and pretty-prints `$` /
+`traverse` (`src/demos/babel-find-jquery.ts`) and pretty-prints `$` /
 `jQuery` call sites.
 
 **Radius Tracker** analyzes this workshop app: imports resolving under
