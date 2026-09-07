@@ -1,3 +1,11 @@
+<p align="center">
+  <img
+    src="./logo.png"
+    alt="Compilers & Static Analysis for JavaScript Developers"
+    width="480"
+  />
+</p>
+
 # Compilers & Static Analysis for JavaScript Developers
 
 Welcome to the `Compilers & Static Analysis for JavaScript Developers`
