@@ -5,7 +5,7 @@
  * Same structural idea as the YAML + @ast-grep/napi demos — multi-edit across
  * the useState / useEffect pair.
  *
- *   yarn demo:ast-grep:jssg:derived-state
+ *   yarn demo:ast-grep:jssg:derived-state-effect
  */
 
 import type TSX from '@codemod.com/jssg-types/langs/tsx';

@@ -6,7 +6,7 @@
  * tidy the React import).
  *
  * Usage:
- *   yarn demo:ast-grep-napi:derived-state
+ *   yarn demo:ast-grep:napi:derived-state-effect
  *   npx tsx src/demos/astgrep-napi-derived-state-effect.ts <file>
  */
 

@@ -10,9 +10,9 @@ import Typography from '@components/ui/typography';
 //
 //  Targeted by three tools (same smell, different front-ends):
 //
-//    yarn demo:ast-grep:derived-state
-//    yarn demo:ast-grep-napi:derived-state
-//    yarn demo:ast-grep:jssg:derived-state
+//    yarn demo:ast-grep:npx:derived-state-effect
+//    yarn demo:ast-grep:napi:derived-state-effect
+//    yarn demo:ast-grep:jssg:derived-state-effect
 //
 //  Restore from git between runs after a mutating codemod.
 //

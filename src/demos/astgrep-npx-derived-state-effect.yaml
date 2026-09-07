@@ -4,7 +4,7 @@
 # Two complementary rewrites + an import cleanup for this demo file.
 #
 # Usage:
-#   yarn demo:ast-grep:derived-state
+#   yarn demo:ast-grep:npx:derived-state-effect
 #
 # Before:
 #   const [fullName, setFullName] = useState('');

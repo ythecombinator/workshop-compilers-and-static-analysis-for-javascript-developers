@@ -89,24 +89,24 @@ code when a UI surface isn't the right fit.
 | --------------------- | ------------------------------------ | ------------------------------------------ |
 | `/jscodeshift-oss`    | `yarn demo:jscodeshift:oss:*`        | OSS React 19 codemods                      |
 | `/jscodeshift-custom` | `yarn demo:jscodeshift:custom:*`     | Custom transforms (styles / handlers)      |
-| `/ast-grep`           | `yarn demo:ast-grep` / `:derived-state`                 | YAML → lazy `useState` + derived state |
-| `/ast-grep-napi`      | `yarn demo:ast-grep-napi` / `:derived-state`            | Same smells via `@ast-grep/napi`       |
-| `/ast-grep-jssg`      | `yarn demo:ast-grep:jssg` / `:derived-state`            | Same smells via Codemod JSSG           |
-| `/ts-morph`           | `yarn demo:ts-morph`                                    | Prop types → interfaces                |
+| `/ast-grep`           | `yarn demo:ast-grep:npx:*`           | YAML → lazy `useState` + derived state |
+| `/ast-grep-napi`      | `yarn demo:ast-grep:napi:*`          | Same smells via `@ast-grep/napi`       |
+| `/ast-grep-jssg`      | `yarn demo:ast-grep:jssg:*`          | Same smells via Codemod JSSG           |
+| `/ts-morph`           | `yarn demo:ts-morph`                 | Prop types → interfaces                |
 
 Transforms live flat under `src/demos/`. The three ast-grep tools share two
 targets — `lazy-state-initializer.tsx` and `derived-state-effect.tsx`. Restore
-from git between runs after a mutating codemod.
+from git between runs after a mutating transform.
 
 ```sh
 yarn demo:jscodeshift:oss:remove-forward-ref
 yarn demo:jscodeshift:custom:extract-styles
-yarn demo:ast-grep
-yarn demo:ast-grep:derived-state
-yarn demo:ast-grep-napi
-yarn demo:ast-grep-napi:derived-state
-yarn demo:ast-grep:jssg
-yarn demo:ast-grep:jssg:derived-state
+yarn demo:ast-grep:npx:lazy-state-initializer
+yarn demo:ast-grep:npx:derived-state-effect
+yarn demo:ast-grep:napi:lazy-state-initializer
+yarn demo:ast-grep:napi:derived-state-effect
+yarn demo:ast-grep:jssg:lazy-state-initializer
+yarn demo:ast-grep:jssg:derived-state-effect
 yarn demo:ts-morph
 ```
 

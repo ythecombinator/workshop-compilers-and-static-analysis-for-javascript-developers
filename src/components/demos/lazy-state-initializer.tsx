@@ -9,9 +9,9 @@ import Typography from '@components/ui/typography';
 //
 //  Targeted by three tools (same smell, different front-ends):
 //
-//    yarn demo:ast-grep
-//    yarn demo:ast-grep-napi
-//    yarn demo:ast-grep:jssg
+//    yarn demo:ast-grep:npx:lazy-state-initializer
+//    yarn demo:ast-grep:napi:lazy-state-initializer
+//    yarn demo:ast-grep:jssg:lazy-state-initializer
 //
 //  Restore from git between runs after a mutating codemod.
 //

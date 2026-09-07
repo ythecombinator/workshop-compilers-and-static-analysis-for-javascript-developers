@@ -6,6 +6,7 @@
 # result on the first render.
 #
 # Usage:
+#   yarn demo:ast-grep:npx:lazy-state-initializer
 #   npx ast-grep scan -r src/demos/astgrep-npx-lazy-state-initializer.yaml --update-all <file>
 #
 # Before:

@@ -5,7 +5,7 @@
  * programmatic NAPI (parse → findAll → replace → commitEdits) instead of YAML.
  *
  * Usage:
- *   yarn demo:ast-grep-napi
+ *   yarn demo:ast-grep:napi:lazy-state-initializer
  *   npx tsx src/demos/astgrep-napi-lazy-state-initializer.ts <file>
  *
  * Before:  useState(new Set(...))
