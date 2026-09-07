@@ -4,7 +4,7 @@
  * Authored for Codemod's JavaScript ast-grep runtime (`codemod:ast-grep`).
  * Same structural idea as the YAML + @ast-grep/napi demos.
  *
- *   yarn demo:jssg
+ *   yarn demo:ast-grep:jssg
  */
 
 import type TSX from '@codemod.com/jssg-types/langs/tsx';

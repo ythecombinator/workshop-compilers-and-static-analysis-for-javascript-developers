@@ -4,12 +4,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '@components/ui/card';
 import Typography from '@components/ui/typography';
 
 //  ---------------------------------------------------------------------------
-//  ANTI-PATTERN TO BE FIXED VIA JSSG (Codemod + codemod:ast-grep)
+//  SHARED ANTI-PATTERN — eager useState(new …)
 //  ---------------------------------------------------------------------------
 //
-//  Codemod: src/codemods/lazy-state-initializer-jssg.ts
+//  Targeted by three tools (same smell, different front-ends):
 //
-//    yarn demo:jssg
+//    yarn demo:ast-grep
+//    yarn demo:ast-grep-napi
+//    yarn demo:ast-grep:jssg
+//
+//  Restore from git between runs after a mutating codemod.
 //
 
 interface Task {
@@ -19,15 +23,17 @@ interface Task {
 }
 
 const INITIAL_TASKS: Task[] = [
-  { id: 'a', title: 'Author lazy-state-initializer-jssg.ts', completed: true },
-  { id: 'b', title: 'yarn demo:jssg on this file', completed: false },
-  { id: 'c', title: 'Confirm useState(() => …)', completed: false },
+  { id: 'a', title: 'Profile with React DevTools', completed: true },
+  { id: 'b', title: 'Fix unnecessary re-renders', completed: false },
+  { id: 'c', title: 'Add Suspense boundaries', completed: false },
+  { id: 'd', title: 'Split heavy bundles', completed: true },
+  { id: 'e', title: 'Measure Core Web Vitals', completed: false },
 ];
 
-export default function Demo() {
+export function LazyStateInitializerDemo({ title }: { title: string }) {
   const [renderCount, setRenderCount] = useState(0);
 
-  // Anti-pattern: eager initializers (JSSG target)
+  // Anti-pattern: constructors run on every render, not just mount
   const [completedIds, setCompletedIds] = useState(
     new Set<string>(
       INITIAL_TASKS.filter((task) => task.completed).map((task) => task.id)
@@ -47,7 +53,7 @@ export default function Demo() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>JSSG</CardTitle>
+        <CardTitle>{title}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-6">

@@ -5,7 +5,7 @@
  * programmatic NAPI (parse → findAll → replace → commitEdits) instead of YAML.
  *
  * Usage:
- *   yarn codemod:ast-grep-napi
+ *   yarn demo:ast-grep-napi
  *   npx tsx src/codemods/lazy-state-initializer-napi.ts <file>
  *
  * Before:  useState(new Set(...))
@@ -17,7 +17,7 @@ import { resolve } from 'node:path';
 import { Lang, parse, type SgNode } from '@ast-grep/napi';
 import { fail, ok } from '@utils/cli';
 
-const DEFAULT_TARGET = 'src/components/demos/ast-grep-napi.tsx';
+const DEFAULT_TARGET = 'src/components/demos/lazy-state-initializer.tsx';
 
 function isEagerConstructorInit(init: SgNode): boolean {
   if (!init.find('new $$$_')) return false;

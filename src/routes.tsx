@@ -1,9 +1,9 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import DemoAstGrep from '@components/demos/ast-grep';
+import DemoAstGrepJssg from '@components/demos/ast-grep-jssg';
 import DemoAstGrepNapi from '@components/demos/ast-grep-napi';
 import DemoJscodeshiftCustom from '@components/demos/jscodeshift-custom';
 import DemoJscodeshiftOss from '@components/demos/jscodeshift-oss';
-import DemoJssg from '@components/demos/jssg';
 import DemoTsMorph from '@components/demos/ts-morph';
 import RootLayout from '@components/layouts/layout-root';
 import HomePage from '@components/pages/home';
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
       { path: 'jscodeshift-custom', element: <DemoJscodeshiftCustom /> },
       { path: 'ast-grep', element: <DemoAstGrep /> },
       { path: 'ast-grep-napi', element: <DemoAstGrepNapi /> },
-      { path: 'jssg', element: <DemoJssg /> },
+      { path: 'ast-grep-jssg', element: <DemoAstGrepJssg /> },
       { path: 'ts-morph', element: <DemoTsMorph /> },
 
       // Compatibility redirects
@@ -40,7 +40,10 @@ export const router = createBrowserRouter([
         path: 'modernizing/ast-grep-napi',
         element: <Navigate to="/ast-grep-napi" replace />,
       },
-      { path: 'modernizing/jssg', element: <Navigate to="/jssg" replace /> },
+      {
+        path: 'modernizing/jssg',
+        element: <Navigate to="/ast-grep-jssg" replace />,
+      },
       {
         path: 'modernizing/ts-morph',
         element: <Navigate to="/ts-morph" replace />,
@@ -67,6 +70,7 @@ export const router = createBrowserRouter([
       { path: 'querying/*', element: <Navigate to="/" replace /> },
       { path: 'observing/*', element: <Navigate to="/" replace /> },
       { path: 'measuring/*', element: <Navigate to="/" replace /> },
+      { path: 'jssg', element: <Navigate to="/ast-grep-jssg" replace /> },
     ],
   },
 ]);
