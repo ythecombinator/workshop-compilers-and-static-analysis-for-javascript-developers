@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Legacy desk · jQuery fixture</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <h1>Ticket board</h1>
+    <button id="refresh">Refresh</button>
+    <ul class="tickets"></ul>
+
+    <script>
+      // Classic ready shorthand + DOM query + event binding
+      $(function () {
+        $('#refresh').on('click', function () {
+          $('.tickets').empty();
+        });
+      });
+    </script>
+
+    <script>
+      // Explicit jQuery global + a namespaced AJAX helper
+      jQuery(document).ready(function () {
+        jQuery.getJSON('/api/tickets', function (rows) {
+          rows.forEach(function (row) {
+            jQuery('.tickets').append('<li>' + row.title + '</li>');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

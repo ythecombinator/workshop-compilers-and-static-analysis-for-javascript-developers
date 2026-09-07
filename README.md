@@ -108,12 +108,18 @@ Fixtures under `src/demos-fixtures/` are only used when the tool needs non-React
 inputs (e.g. Mitosis `.lite.tsx`). Scripts live in `scripts/`.
 
 ```sh
+yarn demo:babel:find-jquery     # HTML → cheerio → Babel AST → jQuery hits
 yarn demo:mitosis                 # .lite.tsx → IR → React + Vue
 yarn demo:radius-tracker          # UI kit vs homebrew adoption graph + report
 yarn demo:radius-tracker:report   # rebuild report from ./usages.sqlite.gz
 yarn demo:radius-tracker:serve    # open the static dashboard
 yarn demo:react-doctor            # scan src/components for React health smells
 ```
+
+**Babel · find jQuery** reads `src/demos-fixtures/jquery/page.html`, pulls inline
+`<script>` bodies with cheerio, then walks each script with `@babel/parser` +
+`traverse` (`src/codemods/babel-find-jquery.ts`) and pretty-prints `$` /
+`jQuery` call sites.
 
 **Radius Tracker** analyzes this workshop app: imports resolving under
 `src/components/ui` are the design-system target; wrappers in
