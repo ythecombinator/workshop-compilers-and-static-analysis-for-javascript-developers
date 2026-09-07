@@ -15,19 +15,19 @@ export const demos = [
     id: 'ast-grep',
     title: 'ast-grep (YAML)',
     path: '/ast-grep',
-    description: 'Eager useState → lazy',
+    description: 'Lazy useState + derived state in useEffect',
   },
   {
     id: 'ast-grep-napi',
     title: 'ast-grep (NAPI)',
     path: '/ast-grep-napi',
-    description: 'Eager useState → lazy',
+    description: 'Lazy useState + derived state in useEffect',
   },
   {
     id: 'ast-grep-jssg',
     title: 'ast-grep (JSSG)',
     path: '/ast-grep-jssg',
-    description: 'Eager useState → lazy',
+    description: 'Lazy useState + derived state in useEffect',
   },
   {
     id: 'ts-morph',

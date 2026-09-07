@@ -81,21 +81,24 @@ code when a UI surface isn't the right fit.
 | --------------------- | ------------------------------------ | ------------------------------------------ |
 | `/jscodeshift-oss`    | `yarn demo:jscodeshift:oss:*`        | OSS React 19 codemods                      |
 | `/jscodeshift-custom` | `yarn demo:jscodeshift:custom:*`     | Custom transforms (styles / handlers)      |
-| `/ast-grep`           | `yarn demo:ast-grep`                 | YAML rules → lazy `useState`               |
-| `/ast-grep-napi`      | `yarn demo:ast-grep-napi`            | Same smell via `@ast-grep/napi`            |
-| `/ast-grep-jssg`      | `yarn demo:ast-grep:jssg`            | Same smell via Codemod JSSG                |
-| `/ts-morph`           | `yarn demo:ts-morph`                 | Prop types → interfaces                    |
+| `/ast-grep`           | `yarn demo:ast-grep` / `:derived-state`                 | YAML → lazy `useState` + derived state |
+| `/ast-grep-napi`      | `yarn demo:ast-grep-napi` / `:derived-state`            | Same smells via `@ast-grep/napi`       |
+| `/ast-grep-jssg`      | `yarn demo:ast-grep:jssg` / `:derived-state`            | Same smells via Codemod JSSG           |
+| `/ts-morph`           | `yarn demo:ts-morph`                                    | Prop types → interfaces                |
 
-Transforms live flat under `src/codemods/`. The three ast-grep tools all rewrite
-the shared target `src/components/demos/lazy-state-initializer.tsx` — restore
+Transforms live flat under `src/codemods/`. The three ast-grep tools share two
+targets — `lazy-state-initializer.tsx` and `derived-state-effect.tsx`. Restore
 from git between runs after a mutating codemod.
 
 ```sh
 yarn demo:jscodeshift:oss:remove-forward-ref
 yarn demo:jscodeshift:custom:extract-styles
 yarn demo:ast-grep
+yarn demo:ast-grep:derived-state
 yarn demo:ast-grep-napi
+yarn demo:ast-grep-napi:derived-state
 yarn demo:ast-grep:jssg
+yarn demo:ast-grep:jssg:derived-state
 yarn demo:ts-morph
 ```
 
@@ -120,8 +123,8 @@ yarn demo:react-doctor            # scan src/components for React health smells
 first.
 
 **react-doctor** scans live code under `src/components` (eager `useState` on
-`lazy-state-initializer`, unstable props on jscodeshift-custom, setState-in-effect on
-`homebrew/derived-label`).
+`lazy-state-initializer`, derived state via `useEffect` on `derived-state-effect`
+and `homebrew/derived-label`, unstable props on jscodeshift-custom).
 
 ## 🛠️ Suggested extras
 

@@ -1,0 +1,64 @@
+# ast-grep rules: Collapse derived state synced via useEffect
+#
+# Uses relational precedes/follows (multi-statement patterns are not one AST node).
+# Two complementary rewrites + an import cleanup for this demo file.
+#
+# Usage:
+#   yarn demo:ast-grep:derived-state
+#
+# Before:
+#   const [fullName, setFullName] = useState('');
+#   useEffect(() => {
+#     setFullName(`${firstName} ${lastName}`);
+#   }, [firstName, lastName]);
+#
+# After:
+#   const fullName = `${firstName} ${lastName}`;
+
+id: derived-state-to-const
+language: tsx
+
+rule:
+  kind: lexical_declaration
+  pattern: const [$STATE, $SETTER] = useState($INIT)
+  precedes:
+    kind: expression_statement
+    has:
+      pattern: |
+        useEffect(() => {
+          $SETTER($EXPR)
+        }, $$$DEPS)
+      stopBy: end
+
+fix: const $STATE = $EXPR;
+
+---
+
+id: remove-derived-sync-effect
+language: tsx
+
+rule:
+  kind: expression_statement
+  has:
+    pattern: |
+      useEffect(() => {
+        $SETTER($EXPR)
+      }, $$$DEPS)
+    stopBy: end
+  follows:
+    kind: lexical_declaration
+    pattern: const [$STATE, $SETTER] = useState($INIT)
+
+# Delete the effect statement (leave nothing behind).
+fix: ''
+
+---
+
+# Demo-file import shape: drop useEffect (non-overlapping with the rewrites above).
+id: derived-state-effect-import
+language: tsx
+
+rule:
+  pattern: import { useEffect, useState } from 'react'
+
+fix: import { useState } from 'react'
