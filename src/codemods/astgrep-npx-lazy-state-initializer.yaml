@@ -6,7 +6,7 @@
 # result on the first render.
 #
 # Usage:
-#   npx ast-grep scan -r src/codemods/lazy-state-initializer.yaml --update-all <file>
+#   npx ast-grep scan -r src/codemods/astgrep-npx-lazy-state-initializer.yaml --update-all <file>
 #
 # Before:
 #   const [ids, setIds] = useState(new Set());

@@ -1,12 +1,12 @@
 /**
  * @ast-grep/napi codemod: Enforce lazy useState initializers
  *
- * Same rewrite as lazy-state-initializer.yaml, authored against the
+ * Same rewrite as astgrep-npx-lazy-state-initializer.yaml, authored against the
  * programmatic NAPI (parse → findAll → replace → commitEdits) instead of YAML.
  *
  * Usage:
  *   yarn demo:ast-grep-napi
- *   npx tsx src/codemods/lazy-state-initializer-napi.ts <file>
+ *   npx tsx src/codemods/astgrep-napi-lazy-state-initializer.ts <file>
  *
  * Before:  useState(new Set(...))
  * After:   useState(() => new Set(...))

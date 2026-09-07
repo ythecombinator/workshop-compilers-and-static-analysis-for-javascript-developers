@@ -1,13 +1,13 @@
 /**
  * @ast-grep/napi codemod: Collapse derived state synced via useEffect
  *
- * Same rewrite as derived-state-effect.yaml — relational matching across the
+ * Same rewrite as astgrep-npx-derived-state-effect.yaml — relational matching across the
  * useState + useEffect pair, then multi-edit commit (const + delete effect +
  * tidy the React import).
  *
  * Usage:
  *   yarn demo:ast-grep-napi:derived-state
- *   npx tsx src/codemods/derived-state-effect-napi.ts <file>
+ *   npx tsx src/codemods/astgrep-napi-derived-state-effect.ts <file>
  */
 
 import { readFileSync, writeFileSync } from 'node:fs';

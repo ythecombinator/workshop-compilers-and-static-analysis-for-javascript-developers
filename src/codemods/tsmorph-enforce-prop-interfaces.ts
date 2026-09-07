@@ -5,7 +5,7 @@
  * in their parameters and extracts them into named interfaces.
  *
  * Usage:
- *   npx tsx src/codemods/enforce-prop-interfaces.ts <file>
+ *   npx tsx src/codemods/tsmorph-enforce-prop-interfaces.ts <file>
  *
  * Before:
  *   function StatusBadge({ label, variant }: { label: string; variant: 'good' | 'poor' }) {
@@ -25,7 +25,7 @@ const filePath = process.argv[2];
 
 if (!filePath) {
   console.error(
-    'Usage: npx tsx src/codemods/enforce-prop-interfaces.ts <file>'
+    'Usage: npx tsx src/codemods/tsmorph-enforce-prop-interfaces.ts <file>'
   );
   process.exit(1);
 }
