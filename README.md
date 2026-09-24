@@ -85,14 +85,14 @@ code when a UI surface isn't the right fit.
 
 ### 🪄 Live codemod targets
 
-| Route                 | Script(s)                            | Focus                                      |
-| --------------------- | ------------------------------------ | ------------------------------------------ |
-| `/jscodeshift-oss`    | `yarn demo:jscodeshift:oss:*`        | OSS React 19 codemods                      |
-| `/jscodeshift-custom` | `yarn demo:jscodeshift:custom:*`     | Custom transforms (styles / handlers)      |
-| `/ast-grep`           | `yarn demo:ast-grep:npx:*`           | YAML → lazy `useState` + derived state |
-| `/ast-grep-napi`      | `yarn demo:ast-grep:napi:*`          | Same smells via `@ast-grep/napi`       |
-| `/ast-grep-jssg`      | `yarn demo:ast-grep:jssg:*`          | Same smells via Codemod JSSG           |
-| `/ts-morph`           | `yarn demo:ts-morph`                 | Prop types → interfaces                |
+| Route                 | Script(s)                        | Focus                                  |
+| --------------------- | -------------------------------- | -------------------------------------- |
+| `/jscodeshift-oss`    | `yarn demo:jscodeshift:oss:*`    | OSS React 19 codemods                  |
+| `/jscodeshift-custom` | `yarn demo:jscodeshift:custom:*` | Custom transforms (styles / handlers)  |
+| `/ast-grep`           | `yarn demo:ast-grep:npx:*`       | YAML → lazy `useState` + derived state |
+| `/ast-grep-napi`      | `yarn demo:ast-grep:napi:*`      | Same smells via `@ast-grep/napi`       |
+| `/ast-grep-jssg`      | `yarn demo:ast-grep:jssg:*`      | Same smells via Codemod JSSG           |
+| `/ts-morph`           | `yarn demo:ts-morph`             | Prop types → interfaces                |
 
 Transforms live flat under `src/demos/`. The three ast-grep tools share two
 targets — `lazy-state-initializer.tsx` and `derived-state-effect.tsx`. Restore

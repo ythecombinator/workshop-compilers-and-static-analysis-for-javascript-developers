@@ -33,7 +33,6 @@ rule:
 fix: const $STATE = $EXPR;
 
 ---
-
 id: remove-derived-sync-effect
 language: tsx
 
@@ -53,7 +52,6 @@ rule:
 fix: ''
 
 ---
-
 # Demo-file import shape: drop useEffect (non-overlapping with the rewrites above).
 id: derived-state-effect-import
 language: tsx
