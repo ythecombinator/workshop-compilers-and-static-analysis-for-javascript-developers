@@ -14,7 +14,7 @@ import Typography from '@components/ui/typography';
 //    yarn demo:ast-grep:napi:derived-state-effect
 //    yarn demo:ast-grep:jssg:derived-state-effect
 //
-//  Restore from git between runs after a mutating codemod.
+//  Run `yarn demo:reset` between runs to restore after a mutating codemod.
 //
 
 export function DerivedStateEffectDemo({ title }: { title: string }) {

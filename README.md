@@ -95,8 +95,9 @@ code when a UI surface isn't the right fit.
 | `/ts-morph`           | `yarn demo:ts-morph`             | Prop types → interfaces                |
 
 Transforms live flat under `src/demos/`. The three ast-grep tools share two
-targets — `lazy-state-initializer.tsx` and `derived-state-effect.tsx`. Restore
-from git between runs after a mutating transform.
+targets — `lazy-state-initializer.tsx` and `derived-state-effect.tsx`. Run
+`yarn demo:reset` between runs to restore the targets after a mutating
+transform.
 
 ```sh
 yarn demo:jscodeshift:oss:remove-forward-ref

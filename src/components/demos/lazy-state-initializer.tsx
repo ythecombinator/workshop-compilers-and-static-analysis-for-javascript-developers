@@ -13,7 +13,7 @@ import Typography from '@components/ui/typography';
 //    yarn demo:ast-grep:napi:lazy-state-initializer
 //    yarn demo:ast-grep:jssg:lazy-state-initializer
 //
-//  Restore from git between runs after a mutating codemod.
+//  Run `yarn demo:reset` between runs to restore after a mutating codemod.
 //
 
 interface Task {
