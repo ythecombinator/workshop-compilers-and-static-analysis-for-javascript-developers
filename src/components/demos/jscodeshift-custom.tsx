@@ -15,8 +15,8 @@ import logger from '@utils/logger';
 //    2. Inline arrow functions as JSX event handlers → new ref every render
 //
 //  Run the NPM scripts to apply the custom codemods:
-//    yarn codemod:jscodeshift-custom:extract-styles
-//    yarn codemod:jscodeshift-custom:extract-handlers
+//    yarn demo:jscodeshift:custom:extract-styles
+//    yarn demo:jscodeshift:custom:extract-handlers
 //
 
 //  ---------------------------------------------------------------------------

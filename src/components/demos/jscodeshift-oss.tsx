@@ -10,12 +10,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@components/ui/card';
 //
 //    1. `npx codemod react/19/remove-forward-ref`  → removes forwardRef wrapper
 //    2. `npx codemod react/19/use-context-hook`    → useContext → use
-//    3. `npx codemod react/19/remove-context-provider` → Context.Provider → Context
-//    4. `npx codemod react/create-element-to-jsx`  → createElement → JSX
 //
 //  Run the NPM scripts to see each transform in action:
-//    yarn codemod:jscodeshift-oss:remove-forward-ref
-//    yarn codemod:jscodeshift-oss:use-context-hook
+//    yarn demo:jscodeshift:oss:remove-forward-ref
+//    yarn demo:jscodeshift:oss:use-context-hook
+//
+//  This file also keeps two more legacy patterns (Context.Provider and
+//  React.createElement) you can explore with other react codemods from the
+//  registry (https://codemod.com/registry) — not wired as yarn scripts.
 //
 
 //  ---------------------------------------------------------------------------

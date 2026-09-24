@@ -12,7 +12,7 @@ import Typography from '@components/ui/typography';
 //  automatically using the TypeScript compiler API.
 //
 //  Run the NPM script to apply the transform:
-//    yarn codemod:ts-morph
+//    yarn demo:ts-morph
 //
 
 //  ---------------------------------------------------------------------------
